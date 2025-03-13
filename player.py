@@ -1,6 +1,12 @@
-from circleshape import *
+"""
+Asteroids Game - Player module
+
+And an explanation of it too.
+"""
+
+# Local application imports
 from constants import *
-from shot import *
+from circleshape import * # Import all so it takes the pygame import too. But check whether that's good practise and update accordingly
 
 # Player class 
 class Player(CircleShape):
@@ -48,3 +54,13 @@ class Player(CircleShape):
             self.move(-dt)
         if keys[pygame.K_SPACE]:
             self.shoot()
+
+class Shot(CircleShape):
+    def __init__(self, x, y, radius):
+        super().__init__(x, y, radius)
+
+    def draw(self, screen):
+        pygame.draw.circle(screen, (255,255,255), self.position, self.radius, 2)
+
+    def update(self, dt):
+        self.position += self.velocity * dt
