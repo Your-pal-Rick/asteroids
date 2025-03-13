@@ -38,6 +38,12 @@ def main():
             if asteroid.is_colliding(my_player):
                 sys.exit("Game over!")
 
+        for asteroid in asteroids:
+            for shot in shots:
+                if asteroid.is_colliding(shot):
+                    shot.kill()
+                    asteroid.split()
+
         screen.fill((0,0,0))
 
         for member in drawable:
