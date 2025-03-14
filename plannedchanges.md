@@ -30,7 +30,9 @@
         - [x] Refactor code to accept new settings structure
     - [ ] Update Player class
         - [ ] Change references to dt to settings.dt
-        - [ ] Change reference to exit_message to settings.exit_message
+    - [x] Add custom exit messages
+        - [x] Ship death message
+        - [x] Manual exit message
 # Documentation:
     - [ ] Docstrings
         - [x] main.py

@@ -9,10 +9,11 @@ A GameSettings singleton, settings, is created at the bottom of the module to be
 Available settings:
     - setings.               ... fps
     - settings.screen.       ... width      height      center
-    - settings.color.        ... background             outline
+    - settings.color.        ... background outline
     - settings.player.       ... radius     color       thickness   speed       turn_speed
     - settings.player.shot.  ... radius     color       thickness   speed       cooldown
     - settings.asteroid.     ... kinds      spawn_rate  color       thickness   min_radius  max_radius
+    - settings.exit_m        ... manual     dead
 """
 
 # Standard library imports
@@ -86,6 +87,14 @@ class AsteroidConstants:
         return self.min_radius * self.kinds
 
 @dataclass(frozen=True)
+class ExitMessages:
+    """Contains strings for game exit messages printed to the terminal"""
+    # Exit message for manual game close
+    manual = "Game closed manually. Thanks for playing!"
+    # Exit message for running out of health (currently one asteroid collision)
+    dead = "Game closed due to critical ship damage. Thanks for playing!"
+
+@dataclass(frozen=True)
 class GameSettings:
     """Stores game updates per second and nested dataclasses:
         SCREEN, COLOR, PLAYER, ASTEROID"""
@@ -102,6 +111,9 @@ class GameSettings:
 
     # settings.asteroid.     ... kinds spawn_rate color thickness min_radius max_radius
     asteroid: AsteroidConstants = AsteroidConstants()
+
+    # settings.exit_m        ... manual dead
+    exit_m: ExitMessages = ExitMessages()
 
     # Updates and renders per second
     fps: int = 60
