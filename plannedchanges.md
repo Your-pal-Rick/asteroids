@@ -1,16 +1,17 @@
 # Refactoring:
-    - [ ] Decompose main() into game.py:
+    - [x] Decompose main() into game.py:
         - [x] Initialisation:
             - [x] Initialise pygame, create game clock and screen surface
             - [x] Create sprite groups
             - [x] Assign class containers
-        - [ ] Events and updates:
-            - [ ] Check for game quit
-            - [ ] Update game state
-            - [ ] Handle collisions
-            - [ ] Render background and objects
-        - [ ] Run game:
-            - [ ] Call above methods
+        - [x] Events and updates:
+            - [x] Check for game quit
+            - [x] Update game state
+            - [x] Handle collisions
+            - [x] Render background and objects
+            - [x] Update dt/regulate framerate
+        - [x] Run game:
+            - [x] Call above methods
     - [x] Merge modules
         - [x] asteroid.py + asteroidfield.py
         - [x] player.py + shot.py
@@ -29,17 +30,21 @@
         - [x] Refactor code to accept new settings structure
 # Documentation:
     - [ ] Docstrings
-        - [ ] main.py
+        - [x] main.py
             - [x] module - summary, usage, dependencies, controls
-            - [ ] func main()
-        - [ ] game.py
-            - [ ] class Game
-        - [ ] circleshape.py
-            - [ ] class CircleShape
+            - [x] func main()
+        - [x] game.py
+            - [x] class Game
+            - [x] methods
+        - [x] circleshape.py
+            - [x] module
+            - [x] class CircleShape
         - [ ] player.py
+            - [ ] module
             - [ ] class Player
             - [ ] class Shot
         - [ ] asteroid.py
+            - [ ] module
             - [ ] class Asteroid
             - [ ] class AsteroidField
         - [x] constants.py

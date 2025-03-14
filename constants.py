@@ -1,9 +1,18 @@
 """
 Asteroids Game - Constants Module
 
-Contains game configurations in the form of dataclasses.
-All are nested within the GameSettings dataclass.
-settings = GameSettings singleton (sole instance) is all that has to be imported.
+Contains game configurations in the form of dataclasses. All are nested and accessible
+within the GameSettings dataclass.
+
+A GameSettings singleton, settings, is created at the bottom of the module to be imported by game.
+
+Available settings:
+    - setings.               ... fps
+    - settings.screen.       ... width      height      center
+    - settings.color.        ... background             outline
+    - settings.player.       ... radius     color       thickness   speed       turn_speed
+    - settings.player.shot.  ... radius     color       thickness   speed       cooldown
+    - settings.asteroid.     ... kinds      spawn_rate  color       thickness   min_radius  max_radius
 """
 
 # Standard library imports
@@ -31,8 +40,12 @@ class ColorSettings:
 @dataclass(frozen=True)
 class ShotConstants:
     """Stores attributes for player weapon shots"""
-    # Weapon attributes - firing cooldown, shot speed and radius
+    # Sprite attributes - Sprite radius, outline colo(u)r and thickness
     radius: int = 5
+    color: tuple[int, int, int] = (255, 255, 255)
+    thickness: int = 2
+
+    # Weapon attributes - firing cooldown and shot speed
     speed: int = 500
     cooldown: float = 0.3
 
@@ -77,17 +90,17 @@ class GameSettings:
     """Stores game updates per second and nested dataclasses:
         SCREEN, COLOR, PLAYER, ASTEROID"""
 
-    # Usage: settings.screen.       ... width height center
+    # settings.screen.       ... width height center
     screen: ScreenSettings = ScreenSettings()
     
-    # Usage: settings.color.        ... background outline
+    # settings.color.        ... background outline
     color: ColorSettings = ColorSettings()
 
-    # Usage: settings.player.       ... radius speed turn_speed
-    # And: settings.player.shot.    ... radius speed cooldown
+    # settings.player.       ... radius color thickness speed turn_speed
+    # settings.player.shot.    ... radius color thickness speed cooldown
     player: PlayerConstants = PlayerConstants()
 
-    # Usage: settings.asteroid.     ... kinds spawn_rate min/max_radius
+    # settings.asteroid.     ... kinds spawn_rate color thickness min_radius max_radius
     asteroid: AsteroidConstants = AsteroidConstants()
 
     # Updates and renders per second

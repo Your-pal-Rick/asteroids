@@ -77,7 +77,7 @@ class Shot(CircleShape):
 
     def draw(self, screen):
         """AAA"""
-        pygame.draw.circle(screen, (settings.color.outline), self.position, self.radius, 2)
+        pygame.draw.circle(screen, (settings.player.shot.color), self.position, self.radius, settings.player.shot.thickness)
 
     def update(self, dt):
         """AAA"""

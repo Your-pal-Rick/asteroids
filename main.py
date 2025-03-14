@@ -1,10 +1,17 @@
 """
 Asteroids Game - Main Module
 
-Based on the boot.dev (https://boot.dev) project, Build Asteroids Using Python,
-which I am refactoring as practise with OOP principles in mind.
+Program is based on the boot.dev (https://boot.dev) project, Build Asteroids Using Python,
+which I refactored as a learning exercise. The game state and its objects are initialised
+in the Game class (game.py).
 
-This is the entry point, which initialises and runs the game using the Game class.
+The Player, Shot, Asteroid, and Asteroidfield classes from their respective *.py files
+define the settings and behaviours of their instances. The CircleShape class servers as a
+parent class to the object classes just mentioned. The GameSettings dataclass stores all
+needed constants and values using nesting. This makes it easy to add modules in future.
+
+This is the entry point, which imports an initialised Game type object and then runs its
+main loop.
 
 Usage:
     Run this file directly to start the game:
@@ -21,11 +28,12 @@ Controls:
 """
 
 # Local application imports
-from game import Game
+from game import game # type: Game
 
 def main():
-    game = Game()
+    """Run infinite game loop until quit initiated"""
     game.run()
 
 if __name__ == "__main__":
+    """Failsafe to ensure program isn't run when imported"""
     main()
