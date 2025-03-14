@@ -28,6 +28,9 @@
         - [x] Structure constants
             - [x] Pick a method -- Dataclasses look interesting
         - [x] Refactor code to accept new settings structure
+    - [ ] Update Player class
+        - [ ] Change references to dt to settings.dt
+        - [ ] Change reference to exit_message to settings.exit_message
 # Documentation:
     - [ ] Docstrings
         - [x] main.py
@@ -48,5 +51,20 @@
             - [ ] class Asteroid
             - [ ] class AsteroidField
         - [x] constants.py
+
+# Game feel
+    - [ ] Adjust object velocities
+        - [ ] Player
+        - [ ] Shots
+        - [ ] Asteroids
+        - [ ] Split asteroids
+    - [ ] Adjust shot cooldown
+    - [ ] Adjust object colo(u)rs
+        - [ ] Player
+        - [ ] Shots
+        - [ ] Asteroids (based on radius?)
+    - [ ] Add colour fills?
+        - [ ] Shots
+        - [ ] Asteroids
 
 Reassess after above changes made.

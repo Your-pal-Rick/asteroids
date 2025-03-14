@@ -42,6 +42,7 @@ class Game:
         """Initialise game state variables"""
         self.dt = 0
         self.running = True
+        self.exit_message = "Game closed. Thanks for playing!"
 
     def _init_pygame(self):
         """Initialise pygame, create game clock and screen"""
@@ -80,7 +81,7 @@ class Game:
         # Player-Asteroid collision check
         for asteroid in self.asteroids:
             if asteroid.is_colliding(self.my_player):
-                sys.exit("Game over!")
+                sys.exit("Hit by an asteroid. " + self.exit_message)
 
         # Shot-Asteroid collision check
         for asteroid in self.asteroids:

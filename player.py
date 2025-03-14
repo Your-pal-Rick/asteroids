@@ -2,6 +2,9 @@
 Asteroids Game - Player module
 
 And an explanation of it too.
+
+## Change references to dt to settings.dt
+## Change exit_message to settings.exit_message
 """
 
 # Standard library imports
@@ -21,6 +24,7 @@ class Player(CircleShape):
         super().__init__(x, y, settings.player.radius)
         self.rotation = 0
         self.cooldown_timer = 0
+        self.exit_message = "Game closed. Thanks for playing!"
 
     def triangle(self):
         """AAA"""
@@ -68,7 +72,7 @@ class Player(CircleShape):
         if keys[pygame.K_SPACE]:
             self.shoot()
         if keys[pygame.K_ESCAPE]:
-            sys.exit()
+            sys.exit(self.exit_message) # Change to settings.exit_message
 
 class Shot(CircleShape):
     """AAA"""
