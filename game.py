@@ -12,7 +12,7 @@ import sys
 import pygame
 
 # Local application imports
-from constants import *
+from constants import settings # type: GameSettings
 from player import Player, Shot
 from asteroid import Asteroid, AsteroidField
 
@@ -38,7 +38,7 @@ class Game:
         """Initialise pygame, create game clock and screen"""
         pygame.init()
         self.clock = pygame.time.Clock()
-        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.screen = pygame.display.set_mode((settings.screen.width, settings.screen.height))
         pygame.display.set_caption("Asteroids - Your pal, Rick")
 
     def _create_sprite_groups(self):
@@ -57,7 +57,7 @@ class Game:
 
     def _create_game_objects(self):
         """Create player ship and asteroid field instances"""
-        self.my_player = Player(PLAYER_SPAWN_POSITION[0], PLAYER_SPAWN_POSITION[1])
+        self.my_player = Player(settings.screen.center[0], settings.screen.center[1])
         self.my_asteroidfield = AsteroidField()
 
     def run(self):
@@ -80,11 +80,11 @@ class Game:
                         shot.kill()
                         asteroid.split()
 
-            self.screen.fill(BLACK)
+            self.screen.fill(settings.color.background)
 
             for member in self.drawable:
                 member.draw(self.screen)
 
             pygame.display.flip()
 
-            self.dt = self.clock.tick(FRAMES_PER_SECOND) / 1000 # to milliseconds
+            self.dt = self.clock.tick(settings.fps) / 1000 # to milliseconds

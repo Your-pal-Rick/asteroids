@@ -1,0 +1,47 @@
+# Refactoring:
+    - [ ] Decompose main() into game.py:
+        - [x] Initialisation:
+            - [x] Initialise pygame, create game clock and screen surface
+            - [x] Create sprite groups
+            - [x] Assign class containers
+        - [ ] Events and updates:
+            - [ ] Check for game quit
+            - [ ] Update game state
+            - [ ] Handle collisions
+            - [ ] Render background and objects
+        - [ ] Run game:
+            - [ ] Call above methods
+    - [x] Merge modules
+        - [x] asteroid.py + asteroidfield.py
+        - [x] player.py + shot.py
+        - [x] Update imports accordingly
+    - [x] Organise imports
+        - [x] main.py
+        - [x] game.py
+        - [x] circleshape.py
+        - [x] player.py
+        - [x] asteroid.py
+        - [x] constants.py
+    - [x] Organise constants
+        - [x] Replace unexplained numbers in code
+        - [x] Structure constants
+            - [x] Pick a method -- Dataclasses look interesting
+        - [x] Refactor code to accept new settings structure
+# Documentation:
+    - [ ] Docstrings
+        - [ ] main.py
+            - [x] module - summary, usage, dependencies, controls
+            - [ ] func main()
+        - [ ] game.py
+            - [ ] class Game
+        - [ ] circleshape.py
+            - [ ] class CircleShape
+        - [ ] player.py
+            - [ ] class Player
+            - [ ] class Shot
+        - [ ] asteroid.py
+            - [ ] class Asteroid
+            - [ ] class AsteroidField
+        - [x] constants.py
+
+Reassess after above changes made.

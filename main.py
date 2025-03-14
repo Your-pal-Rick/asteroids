@@ -17,7 +17,7 @@ Dependencies:
 Controls:
     - WASD:         Move ship
     - Space bar:    Fire
-    - ESC:          Quit game (not implemented yet)
+    - ESC:          Quit game
 """
 
 # Local application imports
