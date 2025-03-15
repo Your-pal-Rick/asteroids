@@ -10,8 +10,11 @@ and update() methods.
 # Third-party imports
 import pygame
 
-# Base class for game objects
 class CircleShape(pygame.sprite.Sprite):
+    """Provides position, velocity, radius, group check attributes.
+       Provides collision check and overridable draw and update methods.
+       Child classes: Player, Shot, Asteroid
+    """
     def __init__(self, x, y, radius):
         # Check for container group
         if hasattr(self, "containers"):

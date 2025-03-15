@@ -28,11 +28,13 @@
         - [x] Structure constants
             - [x] Pick a method -- Dataclasses look interesting
         - [x] Refactor code to accept new settings structure
-    - [ ] Update Player class
-        - [ ] Change references to dt to settings.dt
+    - [x] Update Player class -- Not necessary, singleton passed to Game class
     - [x] Add custom exit messages
         - [x] Ship death message
         - [x] Manual exit message
+    - [ ] Could store Player class settings in a dataclass in player module for 
+          usability/readability reasons? Look into whether this is useful
+
 # Documentation:
     - [ ] Docstrings
         - [x] main.py
@@ -44,29 +46,31 @@
         - [x] circleshape.py
             - [x] module
             - [x] class CircleShape
-        - [ ] player.py
-            - [ ] module
-            - [ ] class Player
-            - [ ] class Shot
+        - [x] player.py
+            - [x] module
+            - [x] class Player
+            - [x] class Shot
         - [ ] asteroid.py
-            - [ ] module
+            - [x] module
             - [ ] class Asteroid
             - [ ] class AsteroidField
         - [x] constants.py
 
 # Game feel
     - [ ] Adjust object velocities
-        - [ ] Player
-        - [ ] Shots
-        - [ ] Asteroids
-        - [ ] Split asteroids
-    - [ ] Adjust shot cooldown
-    - [ ] Adjust object colo(u)rs
-        - [ ] Player
-        - [ ] Shots
-        - [ ] Asteroids (based on radius?)
-    - [ ] Add colour fills?
-        - [ ] Shots
-        - [ ] Asteroids
+        - [x] Player
+        - [x] Shots
+        - [ ] Asteroids -- Requires moving velocity out to GameSettings
+        - [ ] Split asteroids -- As above
+    - [x] Adjust shot cooldown -- Fine as it is
+    - [x] Adjust object colo(u)rs
+        - [x] Player
+        - [x] Shots
+        - [x] Asteroids (based on radius?)
+    - [x] Add colour fills?
+        - [x] Player
+        - [x] Shots
+        - [x] Asteroids
+    - [ ] Double-line player ship?
 
 Reassess after above changes made.

@@ -43,11 +43,11 @@ class ShotConstants:
     """Stores attributes for player weapon shots"""
     # Sprite attributes - Sprite radius, outline colo(u)r and thickness
     radius: int = 5
-    color: tuple[int, int, int] = (255, 255, 255)
-    thickness: int = 2
+    color: tuple[int, int, int] = (255, 128, 128)
+    thickness: int = 0 # Filled
 
     # Weapon attributes - firing cooldown and shot speed
-    speed: int = 500
+    speed: int = 650
     cooldown: float = 0.3
 
 @dataclass(frozen=True)
@@ -55,12 +55,12 @@ class PlayerConstants:
     """Stores attributes for player movement and sprite size, and contains ShotConstants"""
     # Sprite attributes - sprite radius, outline color and thickness
     radius: int = 20
-    color: tuple[int, int, int] = (255, 255, 255)
-    thickness: int = 2
+    color: tuple[int, int, int] = (0, 122, 204)
+    thickness: int = 0
 
     # Movement attributes - fly speed and turn rate
-    speed: int = 200
-    turn_speed: int = 300
+    speed: int = 380
+    turn_speed: int = 360
 
     # Nested ShotConstants
     shot: ShotConstants = ShotConstants()
@@ -69,14 +69,14 @@ class PlayerConstants:
 class AsteroidConstants:
     """Stores attrtibutes for asteroid spawn rate, size, and size diversity"""
     # Number of asteroid sizes
-    kinds: int = 3
+    kinds: int = 4
 
     # Spawn rate (s) of asteroids
     spawn_rate: float = 0.8
 
     # Sprite outline color and thickness
-    color: tuple[int, int, int] = (255, 255, 255)
-    thickness: int = 2
+    color: tuple[int, int, int] = (192, 192, 192)
+    thickness: int = 0
 
     # Minimum radius of asteroid sprite
     min_radius: int = 20

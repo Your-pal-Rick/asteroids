@@ -1,3 +1,13 @@
+"""
+Asteroids Game - Asteroid module
+
+Contains the Asteroid class, which handles asteroid position, radius, velocity,
+splitting, and collisions. Inherits attributes and methods from CircleShape class.
+Contains the AsteroidField class, which handles Asteroid instance spawns.
+
+Imported by Game module.
+"""
+
 # Standard library imports
 import random
 
@@ -9,6 +19,9 @@ from circleshape import CircleShape
 from constants import settings # type: GameSettings
 
 class Asteroid(CircleShape):
+    """Asteroid class, inheriting attributes and methods from CircleShape class.
+       Handles asteroid position, velocity, radius, collisions, splitting,
+       drawing, and updating."""
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
         
