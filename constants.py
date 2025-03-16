@@ -72,7 +72,7 @@ class AsteroidConstants:
     kinds: int = 4
 
     # Spawn rate (s) of asteroids
-    spawn_rate: float = 0.8
+    spawn_rate: float = 1
 
     # Sprite outline color and thickness
     color: tuple[int, int, int] = (192, 192, 192)

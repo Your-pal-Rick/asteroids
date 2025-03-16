@@ -40,12 +40,13 @@ class Player(CircleShape):
         a = self.position + forward * self.radius
         b = self.position - forward * self.radius - right
         c = self.position - forward * self.radius + right
-        return [a, b, c]
+        return ([a, b, c], [a * 0.995, b * 0.995, c * 0.995])
     
     def draw(self, screen):
         """Draw method to be called for drawables in Game draw method.
            Draws instance triangle on game screen using player color and line thickness settings."""
-        pygame.draw.polygon(screen, (settings.player.color), self.triangle(), settings.player.thickness)
+        pygame.draw.polygon(screen, (settings.player.color), self.triangle()[0], settings.player.thickness)
+        pygame.draw.polygon(screen, (16, 82, 154), self.triangle()[1], settings.player.thickness)
 
     def rotate(self, dt):
         """Rotate method to be called in player inputs.
