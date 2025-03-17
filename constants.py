@@ -35,8 +35,9 @@ class ScreenSettings:
 class ColorSettings:
     """Stores draw colors as tuples: (R,G,B) for background and object outlines"""
     # Background and object outline Colors
-    background: tuple[int, int, int] = (1, 8, 77)
-    outline: tuple[int, int, int] = (255,255,255)
+    background: tuple[int, int, int] = (1, 8, 77) # Dark blue
+    outline: tuple[int, int, int] = (255,255,255) # White
+    text: tuple[int, int, int] = (255, 255, 255) # White
 
 @dataclass(frozen=True)
 class ShotConstants:

@@ -49,6 +49,9 @@ class Game:
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((settings.screen.width, settings.screen.height))
         pygame.display.set_caption("Asteroids - But this time, it's Blue")
+        # **** Test font variable declarations: Font object and font surface
+        self.font = pygame.font.Font('freesansbold.ttf', 16)
+        self.score_test = self.font.render("Score = #TEST#", True, settings.color.text)
 
     def _create_sprite_groups(self):
         """Create sprite groups for game entities, for easy iteration"""
@@ -102,6 +105,8 @@ class Game:
         for member in self.drawable:
             member.draw(self.screen)
         # Update display
+        # *** Test: Score text overlay
+        self.screen.blit(self.score_test, (settings.screen.height * 0.1, settings.screen.height * 0.9))
         pygame.display.flip()
 
     def _update_dt(self):
